@@ -61,8 +61,6 @@ app.post('/admin-portal-link', async(req, res) => {
 })
 
 app.post('/createOrganization', (req, res) => {
-  console.log('ID ', req.body.id);
-  console.log('NAME ', req.body.name);
   db.newOrganization(req.body.id, req.body.name)
     .then(() => {
       res.send('organization created');
@@ -87,9 +85,18 @@ app.get('/products/:productId/styles', (req, res) => {
 app.get('/listDirectoryUsers', async (req, res) => {
   try {
     const usersFromDirectory = await workos.directorySync.listUsers({
-      directory: req.body.directoryId,
+      directory: req.query.directoryId,
     });
-    res.send(usersFromDirectory);
+    res.send(usersFromDirectory.data);
+  } catch (error) {
+    console.log('error ', error);
+  }
+});
+
+app.get('/listDirectories', async (req, res) => {
+  try {
+    const directoryList = await workos.directorySync.listDirectories();
+    res.send(directoryList.data);
   } catch (error) {
     console.log('error ', error);
   }

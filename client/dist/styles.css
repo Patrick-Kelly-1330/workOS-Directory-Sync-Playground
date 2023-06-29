@@ -189,6 +189,7 @@ body {
 .loginOrganizationContainer {
   display: flex;
   flex-direction: column;
+  row-gap: .5em;
   justify-content: center;
   align-items: center;
   margin: 2em;
