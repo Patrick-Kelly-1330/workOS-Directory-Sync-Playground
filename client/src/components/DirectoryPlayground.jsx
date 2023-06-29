@@ -1,15 +1,15 @@
 import React from 'react';
 
-const Organizations = ({ currentOrganizations, setDeleteConfirmationVisible, deleteConfirmationVisible, handleDelete }) => {
-  if (currentOrganizations.length > 0) {
-    return (
+const DirectoryPlayground = ({ setDeleteConfirmationVisible, deleteConfirmationVisible, handleDelete }) => {
+    if (true) {
+      return (
       <table className="organizationsTableContainer">
         <tbody>
           <tr>
-            <th className="organizationName">Organization Name</th>
+            <th className="organizationName">Directories</th>
             <th className="organizationId">Organization Id</th>
           </tr>
-          {currentOrganizations.map((organization) => {
+          {/* {currentOrganizations.map((organization) => {
             if (organization.name === 'oneLogin') {
               return (
                 <tr key={organization.id}>
@@ -18,7 +18,7 @@ const Organizations = ({ currentOrganizations, setDeleteConfirmationVisible, del
                 </tr>
               )
             }
-          })}
+          })} */}
         </tbody>
       </table>
     );
@@ -27,4 +27,4 @@ const Organizations = ({ currentOrganizations, setDeleteConfirmationVisible, del
   }
 }
 
-export default Organizations;
+export default DirectoryPlayground;

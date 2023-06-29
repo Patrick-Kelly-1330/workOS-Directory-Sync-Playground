@@ -3,6 +3,7 @@ import Axios from 'axios';
 import Organizations from './Organizations.jsx';
 import NewOrganization from './NewOrganization.jsx';
 import DeleteConfirmation from './DeleteConfirmation.jsx';
+import DirectoryPlayground from './DirectoryPlayground.jsx';
 
 const App = () => {
   const [currentOrganizations, setCurrentOrganizations] = useState([]);
@@ -93,13 +94,14 @@ const App = () => {
   return (
     <div className="componentHolder">
        <div className="containerComponent">
-        <div className="componentHeader">Organizations</div>
+        <div className="componentHeader">Organization</div>
         <Organizations currentOrganizations={currentOrganizations} setDeleteConfirmationVisible={setDeleteConfirmationVisible} deleteConfirmationVisible={deleteConfirmationVisible} />
-        <div className="Button" onClick={()=>setNewOrganizationVisible(!newOrganizationVisible)}>Create new Organization</div>
+        {/* <div className="Button" onClick={()=>setNewOrganizationVisible(!newOrganizationVisible)}>Create new Organization</div> */}
         <NewOrganization setNewOrganizationVisible={setNewOrganizationVisible} newOrganizationVisible={newOrganizationVisible} handleNewOrganization={handleNewOrganization} handleNewOrganizationName={handleNewOrganizationName} handleNewOrganizationDomain={handleNewOrganizationDomain}/>
         <DeleteConfirmation setDeleteConfirmationVisible={setDeleteConfirmationVisible} deleteConfirmationVisible={deleteConfirmationVisible} handleConfirmationDelete={handleConfirmationDelete}/>
       </div>
       {/* <button onClick={()=> {console.log(currentSSOConnections)}}>Value Test Button</button> */}
+      <DirectoryPlayground />
     </div>
   );
 }

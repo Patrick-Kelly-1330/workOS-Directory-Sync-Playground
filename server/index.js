@@ -84,6 +84,30 @@ app.get('/products/:productId/styles', (req, res) => {
     });
 });
 
+app.get('/listDirectoryUsers', async (req, res) => {
+  try {
+    const usersFromDirectory = await workos.directorySync.listUsers({
+      directory: req.body.directoryId,
+    });
+    res.send(usersFromDirectory);
+  } catch (error) {
+    console.log('error ', error);
+  }
+});
+
+app.post('/webhook', async (req, res) => {
+  const webhook = workos.webhooks.constructEvent({
+      payload: req.body,
+      sigHeader: req.headers['workos-signature'],
+      secret: process.env.WORKOS_WEBHOOK_SECRET,
+      tolerance: 90000,
+  })
+
+  console.log('BODY ', req.body);
+
+  res.sendStatus(200)
+})
+
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 });
