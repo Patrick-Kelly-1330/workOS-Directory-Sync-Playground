@@ -1,0 +1,246 @@
+body {
+  background-color: #f0f8ff;
+}
+
+.componentHolder {
+  display: flex;
+  flex-direction: column;
+  /* flex-flow: row wrap; */
+}
+
+.componentHeader {
+  color: #002c53;
+  text-align: center;
+  font-size: 2em;
+  margin: 1em;
+}
+
+.containerComponent {
+  border: .1em solid #dcefff;
+  background-color: #fcfcfc;
+  border-radius: .4em;
+  margin: 1em auto;
+  padding: 1em 2em;
+}
+
+
+.Button {
+  border: .1em solid #e7e7e7;
+  border-radius: .5em;
+  background-color: #ffffff;
+  width: 20em;
+  margin: 2em auto;
+  padding: 1em;
+  text-align: center;
+}
+
+.Button:hover, .submitOrganization:hover, .deleteConfirmationCancel:hover, .deleteConfirmationYes:hover, .linkDetailInfo:hover {
+  cursor: pointer;
+  background-color: #f0f8ff;
+}
+
+.loginOrganizationContainer .Button {
+  width: 20em;
+  margin: 2em 1em;
+}
+
+.newOrganizationNav {
+  display: flex;
+  column-gap: 1em;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ================================
+   Organization Table
+   ================================
+*/
+
+.organizationsTableContainer {
+  margin: 1em auto;
+  border-radius: .6em;
+  border: .1em solid #e7e7e7;
+  background-color: #ffffff;
+  width: 40em;
+  padding: 2em;
+}
+
+.organizationsTableContainer th {
+  font-size: 1.2em;
+  line-height: 1.6em;
+}
+
+.organizationsTableContainer tr, .noOrganizations {
+  text-align: center;
+  padding: 1em;
+  line-height: 1.5em;
+}
+
+.fa-pencil, .fa-trash {
+  padding: 0 .5em;
+}
+
+.fa-pencil:hover, .fa-trash:hover, .fa-circle-left:hover {
+  color: #676767;
+  cursor: pointer;
+}
+
+
+/* ================================
+   New Organization Form
+   ================================
+*/
+
+.modalCover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgb(247, 247, 247, 0.4);
+}
+
+.newOrganizationContainer {
+  position: absolute;
+  top: 10em;
+  right: 5em;
+  width: 30em;
+  height: 15em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 3em 40em;
+  border: .1em solid #dddcdc;
+  background-color: #fcfcfc ;
+  border-radius: .4em;
+}
+
+.newOrganizationForm {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  margin: 1em;
+}
+
+.submitOrganization {
+  margin: 1em 0;
+  padding: 1em 2em;
+  border: .1em solid #5d5d5d;
+  border-radius: .4em;
+}
+
+.newOrganizationForm label {
+  margin: 1em 0 1em 5em;
+}
+
+.newOrganizationForm input {
+  margin: 1em 2em 1em 0;
+}
+
+
+
+/* ================================
+   Confirmation Dialogues
+   ================================
+*/
+
+.modalContainer {
+  border-radius: 0.6em;
+  border: 0.1em solid #e7e7e7;
+  background-color: #fcfcfc;
+  padding: 1em;
+  position: absolute;
+  top: 10em;
+  right: 45em;
+  width: 30em;
+  height: 5em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.deleteConfirmationText {
+  font-size: 1.2em;
+  text-align: center;
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+
+.deleteConfirmationYes {
+  border-radius: .4em;
+  border: .1em solid #e7e7e7;
+  margin: 0 3em;
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.deleteConfirmationCancel {
+  border-radius: .4em;
+  border: .1em solid #e7e7e7;
+  margin: 0 3em;
+  grid-column: 2;
+  grid-row: 2;
+}
+
+/* ================================
+   Login Playground
+   ================================
+*/
+
+.loginOrganizationContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2em;
+}
+
+.selectHeader {
+  font-weight: bold;
+}
+
+.selectText {
+  text-align: center;
+}
+
+
+.generateAdminPortalLink {
+  display: flex;
+  align-items: center;
+  column-gap: 2em;
+}
+
+.linkDetail {
+  overflow-wrap: break-word;
+  width: 50em;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+
+.linkDetailTitle {
+  font-weight: bold;
+  padding: 0 0 1em 0;
+}
+
+.linkDetailHeader {
+  padding: 1em 0;
+}
+
+.linkDetailInfo {
+  padding: 1em;
+}
+
+.linkDetailInfo {
+  background-color: #ffffff;
+  border-radius: .5em;
+  border: 0.1em solid #e7e7e7;
+  width: 15em;
+  text-align: center;
+  color: #002c53;
+}
+
+.linkDetailContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

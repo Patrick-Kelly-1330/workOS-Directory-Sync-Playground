@@ -1,17 +1,30 @@
 const mongoose = require('mongoose');
+const db = mongoose.connection;
+mongoose.connect('mongodb://127.0.0.1:27017/organizations');
 
-function main() {
-  // TODO: update [dataseName] with relevant database name
-  mongoose.connect('mongodb://127.0.0.1:27017/[databaseName]');
+const organizationSchema = new mongoose.Schema({
+    id: String,
+    name: String,
+});
 
-  // TODO: build out schema(s)
-  const testSchema = mongoose.Schema({
-  });
+const Organization = mongoose.model('organization', organizationSchema, 'organization');
 
-  // TODO: create relevant models
-  const Test = mongoose.model('TestSchema', testSchema);
-
-  module.exports = Test;
+module.exports = {
+  newOrganization: (orgId, orgName) => {
+    return Organization.create({
+      id: orgId,
+      name: orgName
+    })
+  },
+  getOrganizations: () => Organization.find({})
 }
 
-main();
+
+db.on('error', () => {
+  console.log('mongoose connection error');
+});
+
+db.once('open', () => {
+  console.log('mongoose connected successfully');
+});
+
