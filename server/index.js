@@ -115,6 +115,18 @@ app.post('/webhook', async (req, res) => {
   res.sendStatus(200)
 })
 
+app.get('/testMethod', async (req, res) => {
+  try {
+    //TODO: Add method to package 
+    const sampleMethod = await workos.organizations.autoPagination();
+    // console.log('METHOD ', sampleMethod);
+    // console.log('RE ', sampleMethod)
+    res.send(sampleMethod);
+  } catch (error) {
+    console.log('error ', error);
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 });

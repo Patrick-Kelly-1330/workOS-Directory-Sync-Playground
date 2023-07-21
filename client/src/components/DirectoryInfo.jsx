@@ -5,7 +5,7 @@ const DirectoryInfo = ({ handleDirectorySelection, handleGetUsers, currentDirect
 
   return (
     <div className="containerComponent">
-        <div className="componentHeader">Login Playground</div>
+        <div className="componentHeader">Directory Playground</div>
         <div className="loginOrganizationContainer">
           <div className="selectHeader">Select your Identity Provider</div>
           <select className="selectText" onChange={handleDirectorySelection}>{currentDirectories.map((directory)=> {
