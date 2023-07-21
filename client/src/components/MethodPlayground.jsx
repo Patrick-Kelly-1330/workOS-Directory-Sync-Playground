@@ -1,6 +1,7 @@
 import React from 'react';
+import OrganizationsList from './OrganizationsList.jsx';
 
-const MethodPlayground = ({ handleMethodTest}) => {
+const MethodPlayground = ({ handleMethodTest, currentOrganizations}) => {
 
   return (
     <div className="containerComponent">
@@ -8,6 +9,7 @@ const MethodPlayground = ({ handleMethodTest}) => {
         <div className="loginOrganizationContainer">
           <button className="Button" onClick={handleMethodTest}>Test Method</button>
         </div>
+        <OrganizationsList currentOrganizations={currentOrganizations} />
     </div>
   );
 }

@@ -192,7 +192,6 @@ body {
   row-gap: .5em;
   justify-content: center;
   align-items: center;
-  margin: 2em;
 }
 
 .selectHeader {
@@ -232,7 +231,7 @@ body {
 }
 
 .linkDetailInfo {
-  background-color: #ffffff;
+  background-color: #fcfcfc;
   border-radius: .5em;
   border: 0.1em solid #e7e7e7;
   width: 15em;
@@ -244,4 +243,17 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.organizationContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 1em;
+  border: .1em solid #f7f7f7;
+}
+
+.individualOrganization {
+  text-align: center;
+  padding: .2em;
 }

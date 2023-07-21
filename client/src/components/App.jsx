@@ -8,6 +8,7 @@ const App = () => {
   const [currentDirectories, setCurrentDirectories] = useState([]);
   const [currentUsers, setCurrentUsers] = useState([]);
   const [selectedDirectory, setSelectedDirectory] = useState('');  
+  const [currentOrganizations, setCurrentOrganizations] = useState([]);
 
   const handleGetDirectories = () => {
     Axios.get('/listDirectories')
@@ -38,7 +39,8 @@ const App = () => {
   const handleMethodTest = () => {
     Axios.get('/testMethod')
       .then((response) => {
-        console.log(response.data)
+        // TODO: Update list of organizations
+        setCurrentOrganizations(response.data)
       })
       .catch((err) => {
         console.log('unable to get users with error ', err);
@@ -62,7 +64,7 @@ const App = () => {
       </div>
       {/* <button onClick={()=> {console.log(currentSSOConnections)}}>Value Test Button</button> */}
       <DirectoryInfo handleDirectorySelection={handleDirectorySelection} handleGetUsers={handleGetUsers} currentDirectories={currentDirectories} currentUsers={currentUsers} />
-      <MethodPlayground handleMethodTest={handleMethodTest} />
+      <MethodPlayground handleMethodTest={handleMethodTest} currentOrganizations={currentOrganizations} />
     </div>
   );
 }
