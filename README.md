@@ -1,2 +1,2 @@
-# TemplateRepo
-Leverage template to initiate app with react, express, and mongodb
+# Playground
+Sample app to build, test, and demo methods
